@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Test Cloudflare Pages</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <span class="badge">Cloudflare Pages</span>
+      <h1>Hello from the edge</h1>
+      <p class="lede">This is a plain static site. No framework. No build step. Just HTML, CSS, and JS.</p>
+    </header>
+
+    <section class="card">
+      <h2>What Pages gives you for free</h2>
+      <ul>
+        <li>Push to GitHub &rarr; auto-deploy</li>
+        <li>A unique preview URL per pull request</li>
+        <li>One-click rollback to any past deployment</li>
+        <li>Custom domains + SSL</li>
+        <li>Declarative redirects &amp; headers</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Try it</h2>
+      <p>Click count: <strong id="count">0</strong></p>
+      <button id="btn" type="button">Click me</button>
+      <p class="hint">This counter runs entirely in your browser &mdash; no backend.</p>
+    </section>
+
+    <footer>
+      <p>Files in this project:</p>
+      <ul class="files">
+        <li><code>index.html</code> &mdash; this page</li>
+        <li><code>style.css</code> &mdash; styling</li>
+        <li><code>_redirects</code> &mdash; URL redirect rules</li>
+        <li><code>_headers</code> &mdash; HTTP header rules</li>
+      </ul>
+    </footer>
+  </main>
+
+  <script>
+    const btn = document.getElementById('btn');
+    const count = document.getElementById('count');
+    let n = 0;
+    btn.addEventListener('click', () => {
+      n += 1;
+      count.textContent = String(n);
+    });
+  </script>
+</body>
+</html>

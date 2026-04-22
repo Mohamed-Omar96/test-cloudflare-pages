@@ -1,0 +1,17 @@
+# Cloudflare Pages _redirects
+# Format: [source] [destination] [status?]
+# Default status is 302. Supported: 301, 302, 303, 307, 308.
+# Limits: 2,000 static + 100 dynamic redirects, 1,000 chars per line.
+# Docs: https://developers.cloudflare.com/pages/configuration/redirects/
+
+# Permanent redirect of an old path
+/old-home            /                     301
+
+# Redirect a removed page to a new location
+/blog                https://example.com/  302
+
+# Splat: forward everything under /docs/* to a subdomain, preserving the tail
+/docs/*              https://docs.example.com/:splat  301
+
+# Placeholder: capture a segment by name
+/users/:id           /profile/:id          301
